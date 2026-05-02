@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+            /* height: 100vh;
+            width: 100vh; */
+        }
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+        }
+        h1{
+            color: white;
+            font-size: 40px;
+
+        }
+        img{
+            height: 60vh;
+            width: 60vh;
+        }
+        button{
+            color:black;
+            background-color: yellow;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Image Changer</h1>
+        <img src="https://d37rmf1ynyg9aw.cloudfront.net/fit-in/1280x1280/data/v4/destinations/0bd5f89b-857f-4f4e-bbd8-2bb847b9bdd8/resources/11760.jpg" alt="" srcset="">
+        <button>London</button>
+    </div>
+
+    <script>
+        let img = document.querySelector("img");
+let button = document.querySelector("button");
+
+let prevscr = img.src;
+let prevtext = button.innerText;
+
+img.addEventListener("mouseover", () => {
+    img.src = "https://www.royalcaribbean.com/media-assets/pmc/content/dam/shore-x/paris-le-havre-leh/lh17-paris-sightseeing-without-lunch/stock-photo-skyline-of-paris-with-eiffel-tower-at-sunset-in-paris-france-eiffel-tower-is-one-of-the-most-752725282.jpg?w=1024";
+    button.innerText = "Paris";
+});
+
+img.addEventListener("mouseout", () => {
+    img.src = prevscr;
+    buttton.innerText = prevtext;
+});
+    </script>
+</body>
+</html>
